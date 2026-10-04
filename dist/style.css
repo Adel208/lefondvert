@@ -21,3 +21,31 @@ header .logo{font-size:23px;letter-spacing:2px;white-space:nowrap}header .logo s
 
 @media(min-width:601px) and (max-width:1050px){header{padding-left:3%;padding-right:3%}header nav{gap:16px}header .logo{font-size:18px;letter-spacing:1px}.header-actions{gap:7px}}
 @media(min-width:601px) and (max-width:760px){header nav{display:none}.menu-toggle{display:flex!important}}
+/* Scroll-directed photographic hero */
+.hero-sequence{position:relative;background:var(--ivory)}
+.hero-sequence .hero{isolation:isolate;overflow:hidden;background:#062e26}
+.hero-photograph{position:absolute;inset:0;z-index:-3;background:url('assets/hero.jpg') center/cover no-repeat;transform-origin:76% 52%}
+.hero-sequence .hero:before{z-index:-2;pointer-events:none}
+.hero-curtain{position:absolute;inset:0;background:var(--ivory);opacity:0;z-index:2;pointer-events:none}
+.hero-final{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 6.5%;opacity:0;pointer-events:none;z-index:1}
+.hero-final>span{font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:24px}
+.hero-final>p{font:clamp(48px,5.6vw,84px)/1.1 Georgia,serif;letter-spacing:-2px;margin:0}
+.hero-final em{color:#d7c3a0}
+.hero-scroll-progress{position:absolute;bottom:0;left:0;right:0;height:2px;z-index:4;background:#c8ad7f28;display:none}
+.hero-scroll-progress>span{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.hero-sequence .hero-bottom{z-index:3;align-items:center;transition:color .15s,border-color .15s}
+.hero-bottom .skip-sequence{font-size:12px;letter-spacing:.6px;text-transform:none;border-bottom:1px solid #c8ad7f99;padding:5px 0;min-height:32px;display:inline-flex;align-items:center}
+.hero-bottom.on-ivory{color:var(--green);border-color:#073b3230}.hero-bottom.on-ivory>span:nth-child(2){color:var(--green)}
+body.motion-home header{position:sticky;top:0;z-index:15}
+.motion-enabled{height:calc(300svh - 104px)}
+.motion-enabled .hero{position:sticky;top:104px;height:calc(100svh - 104px);min-height:0;max-height:none;align-items:center}
+.motion-enabled .hero-copy{will-change:transform,opacity;padding-top:30px;padding-bottom:100px}
+.motion-enabled .hero-photograph{will-change:transform}
+.motion-enabled .hero-scroll-progress{display:block}
+.hero-sequence:not(.motion-enabled) .scroll-invitation{font-size:0}.hero-sequence:not(.motion-enabled) .scroll-invitation:after{content:'JOAILLERIE & DIAMANTS';font-size:10px}
+#selection{position:relative;scroll-margin-top:104px}
+@media(max-width:600px){.motion-enabled{height:calc(250svh - 85px)}.motion-enabled .hero{top:85px;height:calc(100svh - 85px)}.hero-photograph{background-position:78% center;transform-origin:75% 70%}.motion-enabled .hero-copy{padding:35px 7% 75px;align-self:flex-start}.motion-enabled .hero h1{font-size:clamp(44px,12vw,59px)}.motion-enabled .hero-buttons{margin-top:24px}.motion-enabled .hero-buttons .button{padding:13px 20px;min-height:44px}.hero-final{padding:0 7%;justify-content:flex-start;padding-top:90px}.hero-final>p{font-size:52px}.hero-sequence .hero-bottom{bottom:19px;left:7%;right:7%}.hero-bottom .skip-sequence{font-size:12px}.hero-bottom .scroll-invitation{font-size:8px;letter-spacing:1px}#selection{scroll-margin-top:85px}}
+@media(prefers-reduced-motion:reduce){.hero-sequence .hero-final,.hero-sequence .hero-curtain,.hero-sequence .hero-scroll-progress{display:none}.hero-sequence .hero-copy,.hero-photograph{transform:none!important;opacity:1!important}}
+
+.motion-enabled{margin-bottom:calc(-100svh + 104px)}.motion-home #selection{z-index:5;background:var(--ivory)}
+@media(max-width:600px){.motion-enabled{margin-bottom:calc(-100svh + 85px)}}
