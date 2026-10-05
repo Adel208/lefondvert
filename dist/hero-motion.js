@@ -16,7 +16,7 @@
     sequence.className = 'hero-sequence';
     stage.before(sequence); sequence.append(stage);
     stage.insertAdjacentHTML('afterbegin', '<div class="hero-photograph" aria-hidden="true"></div><div class="hero-curtain" aria-hidden="true"></div>');
-    stage.insertAdjacentHTML('beforeend', '<div class="hero-final" aria-hidden="true"><span>LE DIAMANT VERT</span><p>La lumière<br>devient <em>bijou.</em></p></div><div class="hero-scroll-progress" aria-hidden="true"><span></span></div>');
+    stage.insertAdjacentHTML('beforeend', '<div class="hero-final" aria-hidden="true"><span>MAISON VERMEIL</span><p>La lumière<br>devient <em>bijou.</em></p></div><div class="hero-scroll-progress" aria-hidden="true"><span></span></div>');
     bottom.innerHTML = '<span class="scroll-invitation">DÉFILEZ POUR EXPLORER</span><span>La singularité, dans chaque facette.</span><a class="skip-sequence" href="#selection">Voir les pièces</a>';
     const photograph = stage.querySelector('.hero-photograph');
     const curtain = stage.querySelector('.hero-curtain');
